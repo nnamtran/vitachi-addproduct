@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.app .register-form {
+  margin-top: 40px;
+  padding: 0px 30px;
+  border-right: solid 1px #707070;
+}
+
+.app .register-form form{
+  display: flex;
+  flex-direction: column;
+}
+
+.app .register-form form label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.app .register-form form input, textarea, select{
+  padding: 10px 15px;
+  margin: 5px 10px 20px 10px;
+}
+
+.app .register-form form input[type='submit'] {
+  padding: 15px;
+  background-color: #0084ff;
+}
+
+.app .register-form form input[type='submit']:hover {
+  background-color: #1016c5;
+  color: #ffffff;
+}
+
+.app .get-product {
+  margin-top: 40px;
+  padding: 0px 30px;
+}
+
+.app .get-product form {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+.app .get-product form label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.app .get-product form input{
+  padding: 10px 15px;
+  margin: 5px 10px 20px 10px;
+}
+
+.app .get-product form input[type='submit'] {
+  width: 10vw;
+  padding: 10px;
+}
+
+.get-product .result table {
+  border: 1px solid;
+  width: 60vw;
+}
+.get-product .result table th:not(:last-child) {
+  padding: 10px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.get-product .result table th:last-child {
+  padding: 10px;
+  border-bottom: 1px solid;
+}
+
+.get-product .result table td:not(:last-child) {
+  padding: 10px;
+  border-right: 1px solid;
+  text-align: center;
+}
+
+.get-product .result table td:last-child {
+  text-align: center;
+}
