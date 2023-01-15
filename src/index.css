@@ -108,10 +108,10 @@ code {
   
   .app .register-form form input[type='submit'] {
     width: 80vw;
-    height: 5vh;
+    height: 10vh;
   }
 
-  .app .register-form form .category {
+  .app .register-form form select, option {
     width: 50vw;
     height: 100px;
   }
