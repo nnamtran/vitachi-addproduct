@@ -112,7 +112,7 @@ code {
   }
 
   .app .register-form form select, option {
-    width: 100vw;
+    width: 60vw;
     height: 50px;
   }
 }
