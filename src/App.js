@@ -91,7 +91,7 @@ function App() {
       <div className="register-form">
         <h2>Add product: </h2>
         <form onSubmit={handleSubmit} encType="multipart/form-data">
-              <label htmlFor="product_name">Product name: </label>
+              <label htmlFor="product_name">Tên sản phẩm</label>
               <input 
                   id="product_name"
                   type="text"
@@ -101,7 +101,7 @@ function App() {
                   value={formData.product_name}
                   onChange={handleChange}
               />
-              <label htmlFor="product_description">Product description: </label>
+              <label htmlFor="product_description">Thông tin sản phẩm</label>
               <textarea
                   id="product_description"
                   type="text"
@@ -111,17 +111,17 @@ function App() {
                   value={formData.product_description}
                   onChange={handleChange}
               ></textarea>
-              <label htmlFor="price">Price: AUD$</label>
+              <label htmlFor="price">Giá - VND</label>
               <input 
                   id="price"
                   type="number"
                   name="price"
-                  placeholder="29.99"
+                  placeholder="1250K"
                   required={true}
                   value={formData.price}
                   onChange={handleChange}
               />
-              <label htmlFor="rating">Rating: </label>
+              <label htmlFor="rating">Rating</label>
               <input 
                   id="rating"
                   type="number"
@@ -131,7 +131,7 @@ function App() {
                   value={formData.rating}
                   onChange={handleChange}
               />
-              <label htmlFor="rating">Brand: </label>
+              <label htmlFor="rating">Thương hiệu</label>
               <input 
                   id="brand"
                   type="text"
@@ -141,7 +141,7 @@ function App() {
                   value={formData.brand}
                   onChange={handleChange}
               />
-              <label htmlFor="category">Category: </label>
+              <label htmlFor="category">Category</label>
               <select name="category" id="category" onChange={handleChange}>
                 <option value="baby">Baby care</option>
                 <option value="pregnancy">Pregnancy care</option>
@@ -151,7 +151,7 @@ function App() {
                 <option value="men">Men's health</option>
                 <option value="dental">Dental care</option>
               </select>
-              <label htmlFor="image">Image: </label>
+              <label htmlFor="image">Hình ảnh</label>
               <input 
                   id="image"
                   type="file"
@@ -186,19 +186,19 @@ function App() {
                   <table>
                     <thead>
                       <tr key={"header"}>
-                        <th>Product name</th>
-                        <th>Product description</th>
-                        <th>Price</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Thông tin sản phẩm</th>
+                        <th>Giá</th>
                         <th>Rating</th>
-                        <th>Brand</th>
+                        <th>Thương hiệu</th>
                         <th>Category</th>
-                        <th>Image</th>
+                        <th>Hình ảnh</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>{data.product_name}</td>
-                        <td>{data.product_description}</td>
+                        <td className="description">{data.product_description}</td>
                         <td>{data.price}</td>
                         <td>{data.rating}</td>
                         <td>{data.brand}</td>

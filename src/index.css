@@ -76,7 +76,7 @@ code {
 
 .get-product .result table {
   border: 1px solid;
-  width: 60vw;
+  width: 120vw;
 }
 .get-product .result table th:not(:last-child) {
   padding: 10px;
@@ -92,9 +92,27 @@ code {
 .get-product .result table td:not(:last-child) {
   padding: 10px;
   border-right: 1px solid;
-  text-align: center;
+  text-align: start;
+  vertical-align: top;
 }
 
-.get-product .result table td:last-child {
-  text-align: center;
+
+.result .description {
+  white-space: pre-wrap;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+  
+  .app .register-form form input[type='submit'] {
+    width: 80vw;
+    height: auto;
+  }
+
+  .app .register-form form .category {
+    width: 50vw;
+    height: 5vh;
+  }
 }
