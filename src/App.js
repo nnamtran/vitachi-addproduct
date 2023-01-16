@@ -143,6 +143,7 @@ function App() {
               />
               <label htmlFor="category">Category</label>
               <select name="category" id="category" onChange={handleChange}>
+                <option value="none"></option>
                 <option value="baby">Baby care</option>
                 <option value="pregnancy">Pregnancy care</option>
                 <option value="vitamins">Vitamins</option>
