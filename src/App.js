@@ -3,6 +3,7 @@ import axios from "axios";
 // import FileBase64 from "react-file-base64";
 function App() {
   const [successM, setSuccess] = useState('')
+  const [style1, setStyle] = useState('');
   const [data, setData] = useState({});
   const [formData, setFormData] = useState({
         product_name: "",
@@ -21,7 +22,7 @@ function App() {
   })
 
   const handleChangeListener = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.trim();
     const name = e.target.name;
 
     setGetProduct((prevState) => ({
@@ -29,7 +30,6 @@ function App() {
         [name]: value
     }))
   }
-
   const handleGetProduct = async (e) => {
     console.log(getProduct);
     e.preventDefault();
@@ -47,7 +47,7 @@ function App() {
 
   const handleChange = (e) => {
     console.log('e', e);
-    let value = e.target.value
+    let value = e.target.value.trim();
     const name = e.target.name
     if (e.target.name === "image") {
       value = e.target.files[0];
@@ -67,19 +67,23 @@ function App() {
         // const response = await axios.post('http://localhost:3004/addproduct', {formData})
         const response = await axios({
           method: "post",
-          url: "https://vitachi-ecommerce-backend.herokuapp.com/addproduct",
+          url: "http://localhost:3004/addproduct",
           data: formData,
           headers: { "Content-Type": "multipart/form-data",
         },
         });
         console.log(response)
         const success = response.status === 200
-        if (success) {
+        if (success && response.data === "success") {
           let today = new Date();
           let date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
           let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
           let dateTime = date+' -- '+time;
           setSuccess(`${dateTime}`);
+          setStyle('green');
+        } else if (success && response.data === "Sản phẩm đã có trong dữ liệu") {
+          setSuccess("Sản phẩm đã có trong dữ liệu");
+          setStyle('red');
         }
     } catch (err) {
         console.log(err)
@@ -161,7 +165,7 @@ function App() {
                   onChange={handleChange}
               />
             <input type="submit"/>
-            <p>{successM}</p>
+            <p className={style1 === 'green' ? 'added' : 'duplicate'}>{successM}</p>
         </form>
       </div>
                 

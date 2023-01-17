@@ -116,3 +116,11 @@ code {
     height: 50px;
   }
 }
+
+.added {
+  color: green;
+}
+
+.duplicate {
+  color: red;
+}
