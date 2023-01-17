@@ -67,7 +67,7 @@ function App() {
         // const response = await axios.post('http://localhost:3004/addproduct', {formData})
         const response = await axios({
           method: "post",
-          url: "http://localhost:3004/addproduct",
+          url: "https://vitachi-ecommerce-backend.herokuapp.com/addproduct",
           data: formData,
           headers: { "Content-Type": "multipart/form-data",
         },
